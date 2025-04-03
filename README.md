@@ -56,5 +56,5 @@ Os dados são salvos automaticamente em um arquivo JSON chamado **"dados_frequen
 Se quiser contribuir com melhorias, sinta-se à vontade para fazer um fork do repositório e enviar um pull request.
 
 ---
-**Desenvolvido por [Seu Nome]**
+**Desenvolvido por [João Guilherme]**
 
