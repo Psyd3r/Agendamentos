@@ -121,9 +121,66 @@ class Modelo:
             "percentual": percentual
         }
 
+##################################
+# CAMADA DE SERVIÇO (LÓGICA)     #
+##################################
+
 class Servico:
     def __init__(self):
-        pass
+        self.modelo = Modelo()
+    
+    def adicionar_turma(self, codigo, nome, periodo):
+        """Adiciona uma nova turma."""
+        if codigo and nome and periodo:
+            if not self.modelo.obter_turma(codigo):
+                self.modelo.adicionar_turma(codigo, nome, periodo)
+                return True, "Turma adicionada com sucesso!"
+            return False, "Código de turma já existe!"
+        return False, "Todos os campos são obrigatórios!"
+    
+    def listar_turmas(self):
+        """Lista todas as turmas cadastradas."""
+        return self.modelo.listar_turmas()
+    
+    def adicionar_aluno(self, matricula, nome, turma_codigo):
+        """Adiciona um novo aluno."""
+        if matricula and nome and turma_codigo:
+            if not self.modelo.obter_aluno(matricula):
+                if self.modelo.obter_turma(turma_codigo):
+                    self.modelo.adicionar_aluno(matricula, nome, turma_codigo)
+                    return True, "Aluno adicionado com sucesso!"
+                return False, "Turma não encontrada!"
+            return False, "Matrícula já existe!"
+        return False, "Todos os campos são obrigatórios!"
+    
+    def listar_alunos(self, turma_codigo=None):
+        """Lista todos os alunos ou apenas de uma turma específica."""
+        return self.modelo.listar_alunos(turma_codigo)
+    
+    def registrar_presenca(self, turma_codigo, data, presencas):
+        """Registra a presença dos alunos."""
+        if not self.modelo.obter_turma(turma_codigo):
+            return False, "Turma não encontrada!"
+        
+        self.modelo.registrar_presenca(turma_codigo, data, presencas)
+        return True, "Presenças registradas com sucesso!"
+    
+    def consultar_frequencia(self, turma_codigo, data=None):
+        """Consulta a frequência de uma turma."""
+        if not self.modelo.obter_turma(turma_codigo):
+            return False, "Turma não encontrada!"
+        
+        frequencia = self.modelo.consultar_frequencia(turma_codigo, data)
+        if not frequencia and data:
+            return False, "Não há registros para esta data!"
+        return True, frequencia
+    
+    def relatorio_aluno(self, matricula):
+        """Gera um relatório de presença de um aluno."""
+        relatorio = self.modelo.obter_relatorio_aluno(matricula)
+        if not relatorio:
+            return False, "Aluno não encontrado!"
+        return True, relatorio
 
 class Interface:
     def __init__(self):
