@@ -1,20 +1,31 @@
 # Presença Fácil - Sistema de Controle de Frequência de Alunos
 
 ## Descrição do Projeto
-O **Presença Fácil** é um sistema simples desenvolvido em Python para gerenciar a frequência de alunos em sala de aula. O sistema permite cadastrar turmas, associar alunos a essas turmas, registrar presenças e consultar relatórios de frequência de forma organizada. O armazenamento dos dados é feito em arquivos **.json**, garantindo uma estrutura leve e de fácil manipulação.
+O **Presença Fácil** é um sistema completo desenvolvido em Python para gerenciar a frequência de alunos em sala de aula. O sistema permite cadastrar turmas, associar alunos a essas turmas, registrar presenças e consultar relatórios de frequência de forma organizada. O armazenamento dos dados é feito em arquivos **.json**, garantindo uma estrutura leve e de fácil manipulação.
 
 ## Funcionalidades Implementadas
-- Cadastro de turmas
-- Cadastro de alunos vinculados a uma turma
-- Registro de presença por data
+- Cadastro e listagem de turmas
+- Cadastro e listagem de alunos vinculados a uma turma
+- Registro de presença dos alunos por data
 - Consulta da frequência por turma e data
-- Geração de relatórios de presença por aluno
+- Geração de relatórios detalhados por aluno com percentual de presença
 
 ## Arquitetura do Sistema
-O sistema segue uma arquitetura **Camada MVC (Model-View-Controller)** simplificada, separando as responsabilidades conforme descrito abaixo:
-- **Model (Modelo)**: Gerencia os dados e interage com os arquivos JSON.
-- **View (Visão)**: Interface baseada no terminal para interação do usuário.
-- **Controller (Controlador)**: Gerencia a lógica da aplicação, recebendo comandos do usuário e manipulando os dados conforme necessário.
+O sistema segue uma arquitetura **em três camadas**, separando as responsabilidades conforme descrito abaixo:
+
+### Camada de Modelo (Dados)
+- Gerencia o armazenamento e recuperação dos dados em JSON.
+- Implementa funções para manipular turmas, alunos e registros de frequência.
+
+### Camada de Serviço (Lógica)
+- Implementa as regras de negócio do sistema.
+- Valida os dados antes de enviá-los para a camada de modelo.
+- Fornece mensagens de feedback para a interface.
+
+### Camada de Interface (Terminal)
+- Apresenta o menu e opções ao usuário.
+- Utiliza arte ASCII como banner.
+- Coleta os inputs do usuário e os envia para processamento.
 
 ### Tecnologias Utilizadas
 - **Linguagem**: Python 3.x
@@ -38,6 +49,8 @@ O sistema segue uma arquitetura **Camada MVC (Model-View-Controller)** simplific
    python main.py
    ```
 5. Siga as instruções no terminal para interagir com o sistema.
+
+Os dados são salvos automaticamente em um arquivo JSON chamado **"dados_frequencia.json"** no mesmo diretório do programa.
 
 ## Contribuição
 Se quiser contribuir com melhorias, sinta-se à vontade para fazer um fork do repositório e enviar um pull request.
