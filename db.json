@@ -1,0 +1,37 @@
+{
+    "turmas": [
+        {
+            "id": 1,
+            "nome": "Processo de Software"
+        }
+    ],
+    "alunos": [
+        {
+            "id": 1,
+            "nome": "Jo\u00e3o Guilherme Batista Rufino",
+            "turma_id": 1
+        },
+        {
+            "id": 2,
+            "nome": "Felipe",
+            "turma_id": 1
+        }
+    ],
+    "presencas": [
+        {
+            "aluno_id": 1,
+            "data": "2025-04-10",
+            "presente": true
+        },
+        {
+            "aluno_id": 1,
+            "data": "2025-10-15",
+            "presente": true
+        },
+        {
+            "aluno_id": 2,
+            "data": "2025-10-15",
+            "presente": true
+        }
+    ]
+}
