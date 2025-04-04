@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="banner.png" alt="ASCII Art">
+</p>
+
 # Presença Fácil - Sistema de Controle de Frequência de Alunos
 
 ## Descrição do Projeto
