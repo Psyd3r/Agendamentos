@@ -186,6 +186,6 @@ class Interface:
     def __init__(self):
         pass
 
-# Execução do programa
+
 if __name__ == "__main__":
-    print("Sistema de Controle de Frequência - Inicializado")
+    print("Controle de Frequência - Inicializado")
