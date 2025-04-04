@@ -16,11 +16,5 @@
             "turma_id": 2
         }
     ],
-    "presencas": [
-        {
-            "aluno_id": 1,
-            "data": "2025-04-04",
-            "presente": true
-        }
-    ]
+    "presencas": []
 }
