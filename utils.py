@@ -1,9 +1,30 @@
+
+
 import time
 import sys
 import random
 import shutil
 import os
 from datetime import datetime
+
+# Em utils.py, adicione esta função:
+def validar_data(data_str):
+    """Valida se a data está no formato correto yyyy-mm-dd"""
+    # Validação básica: verifica apenas o formato, não a validade da data
+    if len(data_str) != 10:
+        return False
+    
+    partes = data_str.split('-')
+    if len(partes) != 3:
+        return False
+    
+    # Verificar se todas as partes são números
+    try:
+        ano, mes, dia = int(partes[0]), int(partes[1]), int(partes[2])
+        return True
+    except ValueError:
+        return False
+
 
 def gerar_id(lista):
     if not lista:
@@ -76,17 +97,13 @@ def input_data(prompt):
         if valor is None:
             return None
         
-        try:
-            if valor.lower() == 'hoje':
-                return datetime.now().strftime("%Y-%m-%d")
-            
-            if not validar_data(valor):
-                print("Formato de data inválido. Use yyyy-mm-dd")
-                continue
-            
+        if valor.lower() == 'hoje':
+            return datetime.now().strftime("%Y-%m-%d")
+        
+        if validar_data(valor):
             return valor
-        except Exception:
-            print("Data inválida. Use o formato yyyy-mm-dd")
+        else:
+            print("Formato de data inválido.")
 
 def mostra_titulo(titulo):
     """Exibe um título formatado"""

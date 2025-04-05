@@ -33,7 +33,7 @@ def menu_cadastrar_aluno():
     mostra_titulo("CADASTRAR ALUNO")
     
     try:
-        # Listar turmas disponíveis
+        
         turmas = listar_turmas()
         if not turmas:
             print("Não há turmas cadastradas. Cadastre uma turma primeiro.")
@@ -69,7 +69,7 @@ def menu_marcar_presenca():
     mostra_titulo("MARCAR PRESENÇA")
     
     try:
-        # Listar turmas disponíveis
+       
         turmas = listar_turmas()
         if not turmas:
             print("Não há turmas cadastradas. Cadastre uma turma primeiro.")
@@ -119,7 +119,7 @@ def menu_consultar_frequencia():
     mostra_titulo("CONSULTAR FREQUÊNCIA POR TURMA")
     
     try:
-        # Listar turmas disponíveis
+        
         turmas = listar_turmas()
         if not turmas:
             print("Não há turmas cadastradas.")
@@ -165,7 +165,7 @@ def menu_relatorio_aluno():
     mostra_titulo("RELATÓRIO POR ALUNO")
     
     try:
-        # Listar turmas disponíveis para filtrar alunos
+        
         turmas = listar_turmas()
         if not turmas:
             print("Não há turmas cadastradas.")

@@ -3,23 +3,19 @@
         {
             "id": 1,
             "nome": "Arquitetura de Software"
-        },
-        {
-            "id": 2,
-            "nome": "Processo de Software"
         }
     ],
     "alunos": [
         {
             "id": 1,
-            "nome": "Jo\u00e3o",
-            "turma_id": 2
+            "nome": "Amanda ",
+            "turma_id": 1
         }
     ],
     "presencas": [
         {
             "aluno_id": 1,
-            "data": "2025-04-04",
+            "data": "2025-10-10",
             "presente": true
         }
     ]

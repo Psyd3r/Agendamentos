@@ -3,10 +3,18 @@ from models import Turma, Aluno, Presenca
 from utils import gerar_id
 from datetime import datetime
 
+
 def validar_data(data_str):
     """Valida se a data está no formato correto yyyy-mm-dd"""
+    if len(data_str) != 10:
+        return False
+    
+    partes = data_str.split('-')
+    if len(partes) != 3:
+        return False
+    
     try:
-        datetime.strptime(data_str, "%Y-%m-%d")
+        ano, mes, dia = int(partes[0]), int(partes[1]), int(partes[2])
         return True
     except ValueError:
         return False

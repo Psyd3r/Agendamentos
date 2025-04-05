@@ -22,12 +22,12 @@ def load_data():
                 json.dump({"turmas": [], "alunos": [], "presencas": []}, f)
             return {"turmas": [], "alunos": [], "presencas": []}
     except Exception as e:
-        print(f"Erro ao carregar dados: {str(e)}")
-        return {"turmas": [], "alunos": [], "presencas": []}
+        
+             return {"turmas": [], "alunos": [], "presencas": []}
 
 def save_data(data):
     try:
-        # Criar backup antes de salvar
+        
         if os.path.exists(DB_FILE):
             with open(DB_FILE, 'r') as f_orig:
                 with open(DB_FILE + ".bak", 'w') as f_bak:
