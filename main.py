@@ -257,7 +257,6 @@ def menu_listar_alunos():
     mostra_titulo("LISTAR ALUNOS POR TURMA")
     
     try:
-        # Listar turmas disponíveis
         turmas = listar_turmas()
         if not turmas:
             print("Não há turmas cadastradas.")

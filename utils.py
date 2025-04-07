@@ -7,10 +7,10 @@ import shutil
 import os
 from datetime import datetime
 
-# Em utils.py, adicione esta função:
+
 def validar_data(data_str):
     """Valida se a data está no formato correto yyyy-mm-dd"""
-    # Validação básica: verifica apenas o formato, não a validade da data
+    
     if len(data_str) != 10:
         return False
     
@@ -18,7 +18,7 @@ def validar_data(data_str):
     if len(partes) != 3:
         return False
     
-    # Verificar se todas as partes são números
+    
     try:
         ano, mes, dia = int(partes[0]), int(partes[1]), int(partes[2])
         return True
