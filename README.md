@@ -68,6 +68,6 @@ O sistema foi implementado seguindo o padrão de **Arquitetura em Camadas**, pro
 ## 🚀 Como Executar
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/seu-usuario/seu-repositorio.git](https://github.com/Psyd3r/presenca-alunos-python
+cd presenca-alunos-python
 python main.py
